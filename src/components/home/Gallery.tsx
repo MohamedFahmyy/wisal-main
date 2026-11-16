@@ -34,25 +34,25 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenOrderModal }) => {
   });
 
   return (
-    <section id="gallery" className="py-24 bg-[#120307] relative overflow-hidden">
+    <section id="gallery" className="py-24 bg-ivory-50 dark:bg-[#120307] relative overflow-hidden transition-colors duration-300">
       {/* Decorative background glow */}
       <div className="absolute top-1/2 right-10 w-96 h-96 bg-gold-500/5 blur-[140px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-plum-900/60 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-            <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold font-playfair">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-ivory-200/80 dark:bg-plum-900/60 mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-gold-600 dark:text-gold-400" />
+            <span className="text-xs uppercase tracking-widest text-gold-700 dark:text-gold-300 font-semibold font-playfair">
               {t.gallery.eyebrow}
             </span>
           </div>
 
-          <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-ivory-50 mb-4 leading-tight">
+          <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-plum-950 dark:text-ivory-50 mb-4 leading-tight">
             {t.gallery.title}
           </h2>
 
-          <p className="text-ivory-300 text-sm sm:text-base font-light leading-relaxed font-tajawal">
+          <p className="text-plum-800 dark:text-ivory-300 text-sm sm:text-base font-light leading-relaxed font-tajawal">
             {t.gallery.subtitle}
           </p>
 
@@ -65,7 +65,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenOrderModal }) => {
                 className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                   activeCategory === cat.key
                     ? 'bg-gradient-to-r from-gold-500 to-gold-600 text-plum-950 shadow-gold-glow'
-                    : 'bg-plum-900/50 text-ivory-300 border border-gold-500/20 hover:border-gold-500/40 hover:text-gold-200'
+                    : 'bg-ivory-200/90 dark:bg-plum-900/50 text-plum-900 dark:text-ivory-300 border border-gold-500/20 hover:border-gold-500/40 hover:text-gold-700 dark:hover:text-gold-200'
                 }`}
               >
                 {cat.label}
@@ -74,7 +74,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenOrderModal }) => {
           </div>
         </div>
 
-        {/* Gallery Masonry / Grid */}
+        {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredItems.map((item) => {
             const title = language === 'ar' ? item.title : item.titleEn;
@@ -84,7 +84,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenOrderModal }) => {
             return (
               <div
                 key={item.id}
-                className="group relative rounded-3xl overflow-hidden bg-plum-950 border border-gold-500/20 shadow-luxury-card hover:border-gold-400/60 transition-all duration-500 flex flex-col justify-between"
+                className="group relative rounded-3xl overflow-hidden bg-white dark:bg-plum-950 border border-gold-500/20 shadow-md dark:shadow-luxury-card hover:border-gold-400/60 transition-all duration-500 flex flex-col justify-between"
               >
                 {/* Image Container with Zoom effect */}
                 <div className="relative h-72 sm:h-80 overflow-hidden">
@@ -120,14 +120,14 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenOrderModal }) => {
                   </div>
                 </div>
 
-                {/* Hover Quick Action Drawer */}
-                <div className="p-4 bg-plum-900/70 border-t border-gold-500/15 flex items-center justify-between gap-3">
+                {/* Quick Action Drawer */}
+                <div className="p-4 bg-ivory-100/90 dark:bg-plum-900/70 border-t border-gold-500/15 flex items-center justify-between gap-3">
                   <a
                     href={item.destUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackProductRedirect(item.type as 'invitations' | 'ahd', item.destUrl)}
-                    className="text-xs text-gold-300 hover:text-gold-200 flex items-center gap-1.5 transition-colors font-tajawal font-medium"
+                    className="text-xs text-gold-700 dark:text-gold-300 hover:text-gold-900 dark:hover:text-gold-200 flex items-center gap-1.5 transition-colors font-tajawal font-medium"
                   >
                     <span>{t.gallery.openExternal}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -135,7 +135,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenOrderModal }) => {
 
                   <button
                     onClick={() => onOpenOrderModal(item.type as 'invitations' | 'ahd', title)}
-                    className="px-3.5 py-1.5 rounded-xl bg-gold-500/15 hover:bg-gold-500 text-gold-300 hover:text-plum-950 text-xs font-bold transition-all border border-gold-500/30 flex items-center gap-1"
+                    className="px-3.5 py-1.5 rounded-xl bg-gold-500/15 hover:bg-gold-500 text-gold-800 dark:text-gold-300 hover:text-plum-950 text-xs font-bold transition-all border border-gold-500/30 flex items-center gap-1"
                   >
                     <ShoppingBag className="w-3 h-3" />
                     <span>{t.gallery.orderSimilar}</span>

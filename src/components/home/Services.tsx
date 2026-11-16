@@ -27,7 +27,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <section id="services" className="py-24 bg-plum-950 relative overflow-hidden">
+    <section id="services" className="py-24 bg-ivory-100 dark:bg-plum-950 relative overflow-hidden transition-colors duration-300">
       {/* Decorative luxury background accents */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent"></div>
       <div className="absolute -top-32 right-1/4 w-96 h-96 bg-gold-500/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -35,18 +35,18 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-plum-900/60 mb-4 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-            <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold font-playfair">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-ivory-200/80 dark:bg-plum-900/60 mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-gold-600 dark:text-gold-400" />
+            <span className="text-xs uppercase tracking-widest text-gold-700 dark:text-gold-300 font-semibold font-playfair">
               {t.services.eyebrow}
             </span>
           </div>
 
-          <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-ivory-50 mb-5 leading-tight">
+          <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-plum-950 dark:text-ivory-50 mb-5 leading-tight">
             {t.services.title}
           </h2>
 
-          <p className="text-ivory-300 text-base sm:text-lg font-light leading-relaxed font-tajawal">
+          <p className="text-plum-800 dark:text-ivory-300 text-base sm:text-lg font-light leading-relaxed font-tajawal">
             {t.services.subtitle}
           </p>
         </div>
@@ -54,49 +54,49 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
         {/* The Two Flagship Services */}
         <div className="space-y-16">
           {/* SERVICE A: WISAL INVITATIONS */}
-          <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-plum-900/80 via-plum-900/40 to-plum-950 border border-gold-500/30 shadow-luxury-card relative overflow-hidden group">
+          <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-white via-ivory-50 to-ivory-200/60 dark:from-plum-900/80 dark:via-plum-900/40 dark:to-plum-950 border border-gold-500/30 shadow-md dark:shadow-luxury-card relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/10 blur-[90px] rounded-full pointer-events-none"></div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               {/* Text & Features */}
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-300 text-xs font-semibold mb-4">
-                  <Mail className="w-3.5 h-3.5 text-gold-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-800 dark:text-gold-300 text-xs font-semibold mb-4">
+                  <Mail className="w-3.5 h-3.5 text-gold-600 dark:text-gold-400" />
                   <span>{t.services.serviceA.badge}</span>
                 </div>
 
-                <h3 className="font-amiri text-3xl sm:text-4xl font-bold text-ivory-100 mb-3">
+                <h3 className="font-amiri text-3xl sm:text-4xl font-bold text-plum-950 dark:text-ivory-100 mb-3">
                   {t.services.serviceA.title}
                 </h3>
 
-                <p className="text-gold-300 font-playfair italic text-lg sm:text-xl mb-4 font-light">
+                <p className="text-gold-700 dark:text-gold-300 font-playfair italic text-lg sm:text-xl mb-4 font-light">
                   {t.services.serviceA.tagline}
                 </p>
 
-                <p className="text-ivory-300 font-tajawal text-sm sm:text-base leading-relaxed mb-6">
+                <p className="text-plum-800 dark:text-ivory-300 font-tajawal text-sm sm:text-base leading-relaxed mb-6">
                   {t.services.serviceA.description}
                 </p>
 
                 {/* Occasion Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-gold-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <Calendar className="w-3 h-3 text-gold-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-gold-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <Calendar className="w-3 h-3 text-gold-600 dark:text-gold-400" />
                     {language === 'ar' ? 'دعوات الزفاف الملكية' : 'Royal Weddings'}
                   </span>
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-gold-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <Heart className="w-3 h-3 text-rose-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-gold-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <Heart className="w-3 h-3 text-rose-500 dark:text-rose-400" />
                     {language === 'ar' ? 'حفلات الخطوبة' : 'Engagements'}
                   </span>
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-gold-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <Sparkles className="w-3 h-3 text-gold-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-gold-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <Sparkles className="w-3 h-3 text-gold-600 dark:text-gold-400" />
                     {language === 'ar' ? 'عقد قران وكتب كتاب' : 'Katb Ketab'}
                   </span>
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-gold-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <PartyPopper className="w-3 h-3 text-gold-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-gold-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <PartyPopper className="w-3 h-3 text-gold-600 dark:text-gold-400" />
                     {language === 'ar' ? 'أعياد ميلاد وذكرى سنوية' : 'Birthdays & Anniversaries'}
                   </span>
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-gold-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <GraduationCap className="w-3 h-3 text-gold-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-gold-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <GraduationCap className="w-3 h-3 text-gold-600 dark:text-gold-400" />
                     {language === 'ar' ? 'احتفالات التخرج' : 'Graduations'}
                   </span>
                 </div>
@@ -105,8 +105,8 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                   {t.services.serviceA.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs sm:text-sm text-ivory-200 font-tajawal">{feat}</span>
+                      <CheckCircle2 className="w-4 h-4 text-gold-600 dark:text-gold-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-xs sm:text-sm text-plum-900 dark:text-ivory-200 font-tajawal">{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -126,7 +126,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
 
                   <button
                     onClick={() => onOpenOrderModal('invitations')}
-                    className="px-6 py-3.5 rounded-full border border-gold-500/40 hover:bg-gold-500/10 text-gold-300 font-semibold text-sm transition-all"
+                    className="px-6 py-3.5 rounded-full border border-gold-500/40 hover:bg-gold-500/10 text-gold-800 dark:text-gold-300 font-semibold text-sm transition-all"
                   >
                     {language === 'ar' ? 'طلب دعوة خاصة' : 'Commission Invitation'}
                   </button>
@@ -144,12 +144,12 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-plum-950 via-plum-950/40 to-transparent"></div>
 
                   {/* Floating Overlay Badge */}
-                  <div className="absolute bottom-5 inset-x-5 p-4 rounded-xl bg-plum-900/90 backdrop-blur-md border border-gold-500/30 flex items-center justify-between">
+                  <div className="absolute bottom-5 inset-x-5 p-4 rounded-xl bg-white/95 dark:bg-plum-900/90 backdrop-blur-md border border-gold-500/30 flex items-center justify-between shadow-lg">
                     <div>
-                      <div className="text-xs text-gold-400 font-semibold font-playfair uppercase">
+                      <div className="text-xs text-gold-700 dark:text-gold-400 font-semibold font-playfair uppercase">
                         {language === 'ar' ? 'بوابة وِصال للدعوات' : 'WISAL Invitations Gateway'}
                       </div>
-                      <div className="text-sm font-bold text-ivory-100 font-amiri mt-0.5">
+                      <div className="text-sm font-bold text-plum-950 dark:text-ivory-100 font-amiri mt-0.5">
                         {language === 'ar' ? '14 قالباً تفاعلياً ثلاثي الأبعاد' : '14 3D Interactive Themes'}
                       </div>
                     </div>
@@ -170,7 +170,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
           </div>
 
           {/* SERVICE B: WISAL AHD */}
-          <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#2D0A18]/80 via-plum-900/40 to-plum-950 border border-rose-500/30 shadow-luxury-card relative overflow-hidden group">
+          <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-white via-rose-50/40 to-ivory-200/60 dark:from-[#2D0A18]/80 dark:via-plum-900/40 dark:to-plum-950 border border-rose-500/30 shadow-md dark:shadow-luxury-card relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-80 h-80 bg-rose-500/10 blur-[90px] rounded-full pointer-events-none"></div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -185,12 +185,12 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-plum-950 via-plum-950/40 to-transparent"></div>
 
                   {/* Floating Overlay Badge */}
-                  <div className="absolute bottom-5 inset-x-5 p-4 rounded-xl bg-plum-900/90 backdrop-blur-md border border-rose-500/30 flex items-center justify-between">
+                  <div className="absolute bottom-5 inset-x-5 p-4 rounded-xl bg-white/95 dark:bg-plum-900/90 backdrop-blur-md border border-rose-500/30 flex items-center justify-between shadow-lg">
                     <div>
-                      <div className="text-xs text-rose-400 font-semibold font-playfair uppercase">
+                      <div className="text-xs text-rose-700 dark:text-rose-400 font-semibold font-playfair uppercase">
                         {language === 'ar' ? 'منصة عَهد للهدايا الرقمية' : 'WISAL AHD Platform'}
                       </div>
-                      <div className="text-sm font-bold text-ivory-100 font-amiri mt-0.5">
+                      <div className="text-sm font-bold text-plum-950 dark:text-ivory-100 font-amiri mt-0.5">
                         {language === 'ar' ? 'مشغل أسطوانة وألبوم ذكريات' : 'Vinyl Player & Memories'}
                       </div>
                     </div>
@@ -210,39 +210,39 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
 
               {/* Text & Features */}
               <div className="lg:col-span-7 order-1 lg:order-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-semibold mb-4">
-                  <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-700 dark:text-rose-300 text-xs font-semibold mb-4">
+                  <Heart className="w-3.5 h-3.5 text-rose-500 dark:text-rose-400 fill-rose-400" />
                   <span>{t.services.serviceB.badge}</span>
                 </div>
 
-                <h3 className="font-amiri text-3xl sm:text-4xl font-bold text-ivory-100 mb-3">
+                <h3 className="font-amiri text-3xl sm:text-4xl font-bold text-plum-950 dark:text-ivory-100 mb-3">
                   {t.services.serviceB.title}
                 </h3>
 
-                <p className="text-rose-300 font-playfair italic text-lg sm:text-xl mb-4 font-light">
+                <p className="text-rose-700 dark:text-rose-300 font-playfair italic text-lg sm:text-xl mb-4 font-light">
                   {t.services.serviceB.tagline}
                 </p>
 
-                <p className="text-ivory-300 font-tajawal text-sm sm:text-base leading-relaxed mb-6">
+                <p className="text-plum-800 dark:text-ivory-300 font-tajawal text-sm sm:text-base leading-relaxed mb-6">
                   {t.services.serviceB.description}
                 </p>
 
                 {/* Romantic Highlights */}
                 <div className="flex flex-wrap gap-2 mb-8">
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-rose-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <Music className="w-3 h-3 text-rose-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-rose-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <Music className="w-3 h-3 text-rose-500 dark:text-rose-400" />
                     {language === 'ar' ? 'أغنيتكم الخاصة من YouTube' : 'YouTube Song Player'}
                   </span>
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-rose-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <Heart className="w-3 h-3 text-rose-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-rose-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <Heart className="w-3 h-3 text-rose-500 dark:text-rose-400" />
                     {language === 'ar' ? 'معرض صور بولارويد' : 'Polaroid Gallery'}
                   </span>
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-rose-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <Share2 className="w-3 h-3 text-rose-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-rose-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <Share2 className="w-3 h-3 text-rose-500 dark:text-rose-400" />
                     {language === 'ar' ? 'مفاجأة سريعة عبر واتساب' : 'WhatsApp Surprise'}
                   </span>
-                  <span className="px-3 py-1 rounded-lg bg-plum-950/80 border border-rose-500/20 text-xs text-ivory-300 flex items-center gap-1.5">
-                    <Lock className="w-3 h-3 text-rose-400" />
+                  <span className="px-3 py-1 rounded-lg bg-white/90 dark:bg-plum-950/80 border border-rose-500/20 text-xs text-plum-900 dark:text-ivory-300 flex items-center gap-1.5 shadow-sm">
+                    <Lock className="w-3 h-3 text-rose-500 dark:text-rose-400" />
                     {language === 'ar' ? 'خصوصية وأمان 100%' : '100% Private & Secure'}
                   </span>
                 </div>
@@ -251,8 +251,8 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                   {t.services.serviceB.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-rose-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs sm:text-sm text-ivory-200 font-tajawal">{feat}</span>
+                      <CheckCircle2 className="w-4 h-4 text-rose-500 dark:text-rose-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-xs sm:text-sm text-plum-900 dark:text-ivory-200 font-tajawal">{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -264,7 +264,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackProductRedirect('ahd', siteConfig.destinations.ahd)}
-                    className="px-7 py-3.5 rounded-full bg-gradient-to-r from-rose-500 via-rose-600 to-rose-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-rose-950/50 hover:brightness-110 transition-all duration-300 flex items-center gap-2 group/btn"
+                    className="px-7 py-3.5 rounded-full bg-gradient-to-r from-rose-500 via-rose-600 to-rose-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-rose-950/30 hover:brightness-110 transition-all duration-300 flex items-center gap-2 group/btn"
                   >
                     <span>{t.services.serviceB.cta}</span>
                     <ExternalLink className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
@@ -272,7 +272,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenOrderModal }) => {
 
                   <button
                     onClick={() => onOpenOrderModal('ahd')}
-                    className="px-6 py-3.5 rounded-full border border-rose-500/40 hover:bg-rose-500/10 text-rose-300 font-semibold text-sm transition-all"
+                    className="px-6 py-3.5 rounded-full border border-rose-500/40 hover:bg-rose-500/10 text-rose-700 dark:text-rose-300 font-semibold text-sm transition-all"
                   >
                     {language === 'ar' ? 'طلب موقع رومانسي' : 'Commission Romantic Site'}
                   </button>

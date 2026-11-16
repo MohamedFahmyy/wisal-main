@@ -62,11 +62,11 @@ export const OrderModal: React.FC<OrderModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-lg rounded-3xl bg-gradient-to-b from-plum-900 via-plum-950 to-black border border-gold-500/40 p-6 sm:p-8 shadow-2xl shadow-gold-500/10">
+      <div className="relative w-full max-w-lg rounded-3xl bg-gradient-to-b from-white via-ivory-50 to-ivory-100 dark:from-plum-900 dark:via-plum-950 dark:to-black border border-gold-500/40 p-6 sm:p-8 shadow-2xl shadow-gold-500/10 transition-colors duration-300">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full bg-plum-800/80 hover:bg-plum-700 text-ivory-300 hover:text-white transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full bg-ivory-200 dark:bg-plum-800/80 hover:bg-gold-500/20 text-plum-800 dark:text-ivory-300 transition-colors"
           aria-label="Close"
         >
           <X className="w-5 h-5" />
@@ -78,13 +78,13 @@ export const OrderModal: React.FC<OrderModalProps> = ({
             <img
               src="/logo.png"
               alt="WISAL"
-              className="h-12 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(237,220,183,0.35)]"
+              className="h-12 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(197,160,89,0.35)]"
             />
           </div>
-          <h3 className="font-amiri text-2xl sm:text-3xl font-bold text-ivory-50">
+          <h3 className="font-amiri text-2xl sm:text-3xl font-bold text-plum-950 dark:text-ivory-50">
             {t.modal.title}
           </h3>
-          <p className="text-xs sm:text-sm text-ivory-300 font-tajawal mt-1">
+          <p className="text-xs sm:text-sm text-plum-700 dark:text-ivory-300 font-tajawal mt-1">
             {t.modal.subtitle}
           </p>
         </div>
@@ -93,7 +93,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Service Selector Tabs */}
           <div>
-            <label className="block text-xs font-semibold text-gold-300 mb-1.5 font-tajawal">
+            <label className="block text-xs font-semibold text-gold-700 dark:text-gold-300 mb-1.5 font-tajawal">
               {t.modal.serviceLabel}
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -103,7 +103,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                 className={`py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all border ${
                   service === 'invitations'
                     ? 'bg-gold-500 text-plum-950 border-gold-400 shadow-gold-glow'
-                    : 'bg-plum-900/50 text-ivory-300 border-gold-500/20 hover:border-gold-500/40'
+                    : 'bg-white dark:bg-plum-900/50 text-plum-900 dark:text-ivory-300 border-gold-500/20 hover:border-gold-500/40'
                 }`}
               >
                 <Mail className="w-3.5 h-3.5" />
@@ -116,7 +116,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
                 className={`py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all border ${
                   service === 'ahd'
                     ? 'bg-rose-600 text-white border-rose-400 shadow-md'
-                    : 'bg-plum-900/50 text-ivory-300 border-rose-500/20 hover:border-rose-500/40'
+                    : 'bg-white dark:bg-plum-900/50 text-plum-900 dark:text-ivory-300 border-rose-500/20 hover:border-rose-500/40'
                 }`}
               >
                 <Heart className="w-3.5 h-3.5" />
@@ -127,7 +127,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
 
           {/* Package or Template Name (if pre-selected) */}
           {(packageName || templateName) && (
-            <div className="p-3 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-between text-xs text-gold-200">
+            <div className="p-3 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-between text-xs text-gold-800 dark:text-gold-200">
               <span className="font-semibold font-tajawal">
                 {language === 'ar' ? 'الباقة / التصميم المحدد:' : 'Selected Package:'}
               </span>
@@ -137,57 +137,57 @@ export const OrderModal: React.FC<OrderModalProps> = ({
 
           {/* Customer Names Input */}
           <div>
-            <label className="block text-xs font-medium text-ivory-300 mb-1 font-tajawal">
+            <label className="block text-xs font-medium text-plum-800 dark:text-ivory-300 mb-1 font-tajawal">
               {t.modal.namesLabel}
             </label>
             <div className="relative">
-              <User className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gold-500/60 rtl:right-3.5 ltr:left-3.5 rtl:ltr-left" />
+              <User className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gold-600/70 dark:text-gold-500/60 rtl:right-3.5 ltr:left-3.5 rtl:ltr-left" />
               <input
                 type="text"
                 value={names}
                 onChange={(e) => setNames(e.target.value)}
                 placeholder={language === 'ar' ? 'مثال: أحمد وسارة' : 'e.g. Ahmed & Sara'}
-                className="w-full py-2.5 px-10 rounded-xl bg-plum-900/50 border border-gold-500/30 text-ivory-100 placeholder-ivory-500 text-xs sm:text-sm focus:outline-none focus:border-gold-400 font-tajawal"
+                className="w-full py-2.5 px-10 rounded-xl bg-white dark:bg-plum-900/50 border border-gold-500/30 text-plum-950 dark:text-ivory-100 placeholder-plum-400 dark:placeholder-ivory-500 text-xs sm:text-sm focus:outline-none focus:border-gold-400 font-tajawal shadow-sm"
               />
             </div>
           </div>
 
           {/* Date Input */}
           <div>
-            <label className="block text-xs font-medium text-ivory-300 mb-1 font-tajawal">
+            <label className="block text-xs font-medium text-plum-800 dark:text-ivory-300 mb-1 font-tajawal">
               {t.modal.dateLabel}
             </label>
             <div className="relative">
-              <Calendar className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gold-500/60 rtl:right-3.5 ltr:left-3.5 rtl:ltr-left" />
+              <Calendar className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gold-600/70 dark:text-gold-500/60 rtl:right-3.5 ltr:left-3.5 rtl:ltr-left" />
               <input
                 type="text"
                 value={eventDate}
                 onChange={(e) => setEventDate(e.target.value)}
                 placeholder={language === 'ar' ? 'مثال: شهر أكتوبر القادم، أو 14-01-2027' : 'e.g. October 2026 or 14-01-2027'}
-                className="w-full py-2.5 px-10 rounded-xl bg-plum-900/50 border border-gold-500/30 text-ivory-100 placeholder-ivory-500 text-xs sm:text-sm focus:outline-none focus:border-gold-400 font-tajawal"
+                className="w-full py-2.5 px-10 rounded-xl bg-white dark:bg-plum-900/50 border border-gold-500/30 text-plum-950 dark:text-ivory-100 placeholder-plum-400 dark:placeholder-ivory-500 text-xs sm:text-sm focus:outline-none focus:border-gold-400 font-tajawal shadow-sm"
               />
             </div>
           </div>
 
           {/* Custom Notes */}
           <div>
-            <label className="block text-xs font-medium text-ivory-300 mb-1 font-tajawal">
+            <label className="block text-xs font-medium text-plum-800 dark:text-ivory-300 mb-1 font-tajawal">
               {t.modal.notesLabel}
             </label>
             <div className="relative">
-              <FileText className="absolute right-3.5 top-3 w-4 h-4 text-gold-500/60 rtl:right-3.5 ltr:left-3.5 rtl:ltr-left" />
+              <FileText className="absolute right-3.5 top-3 w-4 h-4 text-gold-600/70 dark:text-gold-500/60 rtl:right-3.5 ltr:left-3.5 rtl:ltr-left" />
               <textarea
                 rows={3}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder={t.modal.notesPlaceholder}
-                className="w-full py-2.5 px-10 rounded-xl bg-plum-900/50 border border-gold-500/30 text-ivory-100 placeholder-ivory-500 text-xs sm:text-sm focus:outline-none focus:border-gold-400 font-tajawal resize-none"
+                className="w-full py-2.5 px-10 rounded-xl bg-white dark:bg-plum-900/50 border border-gold-500/30 text-plum-950 dark:text-ivory-100 placeholder-plum-400 dark:placeholder-ivory-500 text-xs sm:text-sm focus:outline-none focus:border-gold-400 font-tajawal resize-none shadow-sm"
               ></textarea>
             </div>
           </div>
 
           {/* Reassurance text */}
-          <p className="text-[11px] text-ivory-400 text-center font-tajawal">
+          <p className="text-[11px] text-plum-700 dark:text-ivory-400 text-center font-tajawal">
             {t.modal.reassuranceText}
           </p>
 

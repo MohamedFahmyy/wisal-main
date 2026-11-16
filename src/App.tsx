@@ -53,7 +53,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-plum-950 text-ivory-100 flex flex-col selection:bg-gold-500 selection:text-plum-950">
+    <div className="min-h-screen bg-ivory-50 text-plum-900 dark:bg-plum-950 dark:text-ivory-100 flex flex-col selection:bg-gold-500 selection:text-plum-950 transition-colors duration-300">
       {/* Navigation */}
       <Navbar onOpenOrderModal={handleOpenOrderModal} />
 

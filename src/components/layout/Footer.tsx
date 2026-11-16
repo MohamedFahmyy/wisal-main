@@ -20,26 +20,26 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
   const { t, language } = useLanguage();
 
   return (
-    <footer className="bg-plum-950 border-t border-gold-500/20 pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-ivory-100 dark:bg-plum-950 border-t border-gold-500/20 pt-16 pb-12 relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-gold-500/15">
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="p-1.5 rounded-2xl bg-plum-900/80 border border-gold-500/30 shadow-gold-glow">
+              <div className="p-1.5 rounded-2xl bg-white/90 dark:bg-plum-900/80 border border-gold-500/30 shadow-sm dark:shadow-gold-glow">
                 <img
                   src={siteConfig.brand.logo}
                   alt="WISAL | وِصال"
-                  className="h-14 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(237,220,183,0.35)]"
+                  className="h-14 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(197,160,89,0.35)]"
                 />
               </div>
             </div>
 
-            <p className="text-gold-300 font-playfair italic text-sm font-light">
+            <p className="text-gold-700 dark:text-gold-300 font-playfair italic text-sm font-light">
               "{language === 'ar' ? siteConfig.brand.taglineAr : siteConfig.brand.tagline}"
             </p>
 
-            <p className="text-xs sm:text-sm text-ivory-300 font-tajawal leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-plum-800 dark:text-ivory-300 font-tajawal leading-relaxed max-w-sm">
               {t.footer.brandDesc}
             </p>
 
@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
                 href={siteConfig.contact.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-plum-900/80 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:text-gold-200 hover:border-gold-400 transition-colors"
+                className="w-8 h-8 rounded-full bg-ivory-200/80 dark:bg-plum-900/80 border border-gold-500/30 flex items-center justify-center text-gold-700 dark:text-gold-400 hover:text-gold-900 dark:hover:text-gold-200 hover:border-gold-400 transition-colors shadow-sm"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
                 href={siteConfig.contact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-plum-900/80 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:text-gold-200 hover:border-gold-400 transition-colors"
+                className="w-8 h-8 rounded-full bg-ivory-200/80 dark:bg-plum-900/80 border border-gold-500/30 flex items-center justify-center text-gold-700 dark:text-gold-400 hover:text-gold-900 dark:hover:text-gold-200 hover:border-gold-400 transition-colors shadow-sm"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
                 href={`https://wa.me/${siteConfig.whatsapp.phoneNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-plum-900/80 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:text-emerald-400 hover:border-emerald-400 transition-colors"
+                className="w-8 h-8 rounded-full bg-ivory-200/80 dark:bg-plum-900/80 border border-gold-500/30 flex items-center justify-center text-gold-700 dark:text-gold-400 hover:text-emerald-500 hover:border-emerald-500 transition-colors shadow-sm"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -76,20 +76,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
 
           {/* Product Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-amiri text-lg font-bold text-ivory-100 border-b border-gold-500/20 pb-2">
+            <h4 className="font-amiri text-lg font-bold text-plum-950 dark:text-ivory-100 border-b border-gold-500/20 pb-2">
               {t.footer.productsTitle}
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-ivory-300 font-tajawal">
+            <ul className="space-y-2 text-xs sm:text-sm text-plum-800 dark:text-ivory-300 font-tajawal">
               <li>
                 <a
                   href={siteConfig.destinations.invitations}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackProductRedirect('invitations', siteConfig.destinations.invitations)}
-                  className="hover:text-gold-300 transition-colors flex items-center gap-1.5"
+                  className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors flex items-center gap-1.5"
                 >
                   <span>{t.footer.service1Link}</span>
-                  <ExternalLink className="w-3 h-3 text-gold-400" />
+                  <ExternalLink className="w-3 h-3 text-gold-600 dark:text-gold-400" />
                 </a>
               </li>
               <li>
@@ -98,16 +98,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackProductRedirect('ahd', siteConfig.destinations.ahd)}
-                  className="hover:text-gold-300 transition-colors flex items-center gap-1.5"
+                  className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors flex items-center gap-1.5"
                 >
                   <span>{t.footer.service2Link}</span>
-                  <ExternalLink className="w-3 h-3 text-rose-400" />
+                  <ExternalLink className="w-3 h-3 text-rose-500 dark:text-rose-400" />
                 </a>
               </li>
               <li>
                 <button
                   onClick={onOpenOrderModal}
-                  className="hover:text-gold-300 transition-colors text-start"
+                  className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors text-start"
                 >
                   {language === 'ar' ? 'طلب تصميم حصري' : 'Commission Custom Design'}
                 </button>
@@ -117,32 +117,32 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
 
           {/* Quick Platform Links */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-amiri text-lg font-bold text-ivory-100 border-b border-gold-500/20 pb-2">
+            <h4 className="font-amiri text-lg font-bold text-plum-950 dark:text-ivory-100 border-b border-gold-500/20 pb-2">
               {t.footer.linksTitle}
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-ivory-300 font-tajawal">
+            <ul className="space-y-2 text-xs sm:text-sm text-plum-800 dark:text-ivory-300 font-tajawal">
               <li>
-                <a href="#services" className="hover:text-gold-300 transition-colors">
+                <a href="#services" className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors">
                   {t.nav.services}
                 </a>
               </li>
               <li>
-                <a href="#how-it-works" className="hover:text-gold-300 transition-colors">
+                <a href="#how-it-works" className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors">
                   {t.nav.howItWorks}
                 </a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-gold-300 transition-colors">
+                <a href="#gallery" className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors">
                   {t.nav.gallery}
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-gold-300 transition-colors">
+                <a href="#pricing" className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors">
                   {t.nav.pricing}
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-gold-300 transition-colors">
+                <a href="#faq" className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors">
                   {t.nav.faq}
                 </a>
               </li>
@@ -151,28 +151,28 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
 
           {/* Contact Details */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-amiri text-lg font-bold text-ivory-100 border-b border-gold-500/20 pb-2">
+            <h4 className="font-amiri text-lg font-bold text-plum-950 dark:text-ivory-100 border-b border-gold-500/20 pb-2">
               {t.footer.contactTitle}
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-ivory-300 font-tajawal">
-              <li className="flex items-center gap-2 text-ivory-300">
-                <Mail className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-gold-300 truncate">
+            <ul className="space-y-2 text-xs sm:text-sm text-plum-800 dark:text-ivory-300 font-tajawal">
+              <li className="flex items-center gap-2 text-plum-800 dark:text-ivory-300">
+                <Mail className="w-3.5 h-3.5 text-gold-600 dark:text-gold-400 flex-shrink-0" />
+                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-gold-600 dark:hover:text-gold-300 truncate">
                   {siteConfig.contact.email}
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-ivory-300">
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              <li className="flex items-center gap-2 text-plum-800 dark:text-ivory-300">
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp.phoneNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-gold-300"
+                  className="hover:text-gold-600 dark:hover:text-gold-300"
                 >
                   {siteConfig.whatsapp.displayPhoneNumber}
                 </a>
               </li>
-              <li className="text-xs text-ivory-400 pt-1">
+              <li className="text-xs text-plum-700 dark:text-ivory-400 pt-1">
                 {language === 'ar' ? siteConfig.brand.originAr : siteConfig.brand.origin}
               </li>
             </ul>
@@ -180,11 +180,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
         </div>
 
         {/* Bottom Bar: Copyright & Policies */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ivory-400 font-tajawal">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-plum-700 dark:text-ivory-400 font-tajawal">
           <div className="flex items-center gap-1 text-center sm:text-start">
             <span>{t.footer.copyright} {siteConfig.brand.established} — 2026.</span>
             <span>•</span>
-            <span className="inline-flex items-center gap-1 text-gold-300">
+            <span className="inline-flex items-center gap-1 text-gold-700 dark:text-gold-300 font-medium">
               {t.footer.madeWithLove}
               <Heart className="w-3 h-3 text-rose-500 fill-rose-500 inline" />
             </span>
@@ -193,14 +193,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicyModal, onOpenOrderMo
           <div className="flex items-center gap-4">
             <button
               onClick={() => onOpenPolicyModal('privacy')}
-              className="hover:text-gold-300 transition-colors underline-offset-4 hover:underline"
+              className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors underline-offset-4 hover:underline"
             >
               {t.footer.privacy}
             </button>
             <span>•</span>
             <button
               onClick={() => onOpenPolicyModal('terms')}
-              className="hover:text-gold-300 transition-colors underline-offset-4 hover:underline"
+              className="hover:text-gold-600 dark:hover:text-gold-300 transition-colors underline-offset-4 hover:underline"
             >
               {t.footer.terms}
             </button>

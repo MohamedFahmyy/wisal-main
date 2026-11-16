@@ -30,36 +30,36 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
   });
 
   return (
-    <section id="showcase" className="py-24 bg-[#140409] relative overflow-hidden">
+    <section id="showcase" className="py-24 bg-ivory-50 dark:bg-[#140409] relative overflow-hidden transition-colors duration-300">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gold-500/5 blur-[160px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-plum-900/60 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-            <span className="text-xs uppercase tracking-widest text-gold-300 font-semibold font-playfair">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-ivory-200/80 dark:bg-plum-900/60 mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-gold-600 dark:text-gold-400" />
+            <span className="text-xs uppercase tracking-widest text-gold-700 dark:text-gold-300 font-semibold font-playfair">
               {t.showcase.eyebrow}
             </span>
           </div>
 
-          <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-ivory-50 mb-4 leading-tight">
+          <h2 className="font-amiri text-3xl sm:text-5xl font-bold text-plum-950 dark:text-ivory-50 mb-4 leading-tight">
             {t.showcase.title}
           </h2>
 
-          <p className="text-ivory-300 text-sm sm:text-base font-light leading-relaxed font-tajawal">
+          <p className="text-plum-800 dark:text-ivory-300 text-sm sm:text-base font-light leading-relaxed font-tajawal">
             {t.showcase.subtitle}
           </p>
 
           {/* Filter Tabs */}
-          <div className="inline-flex p-1.5 rounded-full bg-plum-900/90 border border-gold-500/30 mt-8 shadow-inner">
+          <div className="inline-flex p-1.5 rounded-full bg-ivory-200/90 dark:bg-plum-900/90 border border-gold-500/30 mt-8 shadow-inner">
             <button
               onClick={() => setFilter('all')}
               className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 filter === 'all'
                   ? 'bg-gradient-to-r from-gold-500 to-gold-600 text-plum-950 shadow-gold-glow'
-                  : 'text-ivory-300 hover:text-gold-300'
+                  : 'text-plum-800 dark:text-ivory-300 hover:text-gold-600 dark:hover:text-gold-300'
               }`}
             >
               {t.showcase.tabAll}
@@ -69,7 +69,7 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
               className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 filter === 'invitations'
                   ? 'bg-gradient-to-r from-gold-500 to-gold-600 text-plum-950 shadow-gold-glow'
-                  : 'text-ivory-300 hover:text-gold-300'
+                  : 'text-plum-800 dark:text-ivory-300 hover:text-gold-600 dark:hover:text-gold-300'
               }`}
             >
               <Mail className="w-3.5 h-3.5" />
@@ -80,7 +80,7 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
               className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 filter === 'ahd'
                   ? 'bg-gradient-to-r from-rose-500 to-rose-600 text-white shadow-md'
-                  : 'text-ivory-300 hover:text-rose-300'
+                  : 'text-plum-800 dark:text-ivory-300 hover:text-rose-600 dark:hover:text-rose-300'
               }`}
             >
               <Heart className="w-3.5 h-3.5" />
@@ -103,9 +103,9 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
             return (
               <div
                 key={product.id}
-                className={`rounded-3xl overflow-hidden bg-plum-900/60 border ${
+                className={`rounded-3xl overflow-hidden bg-white dark:bg-plum-900/60 border ${
                   isAhd ? 'border-rose-500/25 hover:border-rose-400/60' : 'border-gold-500/25 hover:border-gold-400/60'
-                } shadow-luxury-card hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group`}
+                } shadow-md dark:shadow-luxury-card hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group`}
               >
                 <div>
                   {/* Card Visual Header with Badge */}
@@ -138,7 +138,7 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
 
                     {/* Subtitle pill */}
                     <div className="absolute bottom-3 inset-x-4">
-                      <span className="text-xs text-gold-300 font-medium bg-plum-950/90 backdrop-blur-sm px-2.5 py-1 rounded-md border border-gold-500/20 inline-block font-tajawal truncate max-w-full">
+                      <span className="text-xs text-gold-200 font-medium bg-plum-950/90 backdrop-blur-sm px-2.5 py-1 rounded-md border border-gold-500/20 inline-block font-tajawal truncate max-w-full">
                         {subtitle}
                       </span>
                     </div>
@@ -146,11 +146,11 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
 
                   {/* Card Body */}
                   <div className="p-6">
-                    <h3 className="font-amiri text-2xl font-bold text-ivory-100 mb-2 group-hover:text-gold-300 transition-colors">
+                    <h3 className="font-amiri text-2xl font-bold text-plum-950 dark:text-ivory-100 mb-2 group-hover:text-gold-600 dark:group-hover:text-gold-300 transition-colors">
                       {title}
                     </h3>
 
-                    <p className="text-ivory-300/90 text-xs sm:text-sm font-tajawal line-clamp-2 leading-relaxed mb-5">
+                    <p className="text-plum-800 dark:text-ivory-300/90 text-xs sm:text-sm font-tajawal line-clamp-2 leading-relaxed mb-5">
                       {desc}
                     </p>
 
@@ -160,10 +160,10 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
                         <div key={idx} className="flex items-start gap-2">
                           <Check
                             className={`w-3.5 h-3.5 flex-shrink-0 mt-0.5 ${
-                              isAhd ? 'text-rose-400' : 'text-gold-400'
+                              isAhd ? 'text-rose-500 dark:text-rose-400' : 'text-gold-600 dark:text-gold-400'
                             }`}
                           />
-                          <span className="text-xs text-ivory-200 font-tajawal leading-snug">{feat}</span>
+                          <span className="text-xs text-plum-900 dark:text-ivory-200 font-tajawal leading-snug">{feat}</span>
                         </div>
                       ))}
                     </div>
@@ -176,7 +176,7 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
                     {/* Preview Button */}
                     <button
                       onClick={() => onSelectProductForPreview(product)}
-                      className="py-2.5 px-3 rounded-xl border border-gold-500/30 hover:bg-gold-500/15 text-gold-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all"
+                      className="py-2.5 px-3 rounded-xl border border-gold-500/30 hover:bg-gold-500/15 text-gold-700 dark:text-gold-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>{language === 'ar' ? 'معاينة' : 'Preview'}</span>
@@ -202,7 +202,7 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackProductRedirect(product.category, product.previewUrl)}
-                    className="w-full py-1.5 text-center text-[11px] text-ivory-400 hover:text-gold-300 flex items-center justify-center gap-1 transition-colors"
+                    className="w-full py-1.5 text-center text-[11px] text-plum-700 dark:text-ivory-400 hover:text-gold-700 dark:hover:text-gold-300 flex items-center justify-center gap-1 transition-colors font-medium"
                   >
                     <span>{t.showcase.liveAppBtn}</span>
                   </a>
@@ -214,8 +214,8 @@ export const InteractiveShowcase: React.FC<InteractiveShowcaseProps> = ({
 
         {/* Authentic Notice */}
         <div className="text-center mt-12">
-          <p className="text-xs text-ivory-400 font-tajawal flex items-center justify-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+          <p className="text-xs text-plum-700 dark:text-ivory-400 font-tajawal flex items-center justify-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
             <span>{t.showcase.authenticNotice}</span>
           </p>
         </div>
